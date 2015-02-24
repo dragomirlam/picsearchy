@@ -12,27 +12,30 @@
 	</head>
 
 	<body>
-		<header>
-			<div id="logo-container">
-				<img src="img/logo.png" id="logo">
+		<div id="main-container">
+			<header>
+				<div id="logo-container">
+					<img src="img/logo.png" id="logo">
+				</div>
+				<div id="title-container">
+					<p id="logo-title">Picsearchy</p>
+				</div>
+			</header>
+			<div id="search-container">
+				<div id="search-box">
+					<input type="text" id="search-text" class="textbox">
+				</div>
+				<div id="search-button">
+					<button type="button" onclick="search()" class="btn"><img src="img/magnifying_len_2.png"></button>	
+				</div>
+				<div id="images-container"></div>
 			</div>
-			<div id="title-container">
-				<p id="logo-title">Picsearchy</p>
+	        <div id="modal-windows"></div>
+		</div>
+		<footer>
+        	<div id="info">
+				<h5>© Lampros Dragomoiris 2015</h5>
 			</div>
-		</header>
-		<div id="search-container">
-			<div id="search-box">
-				<input type="text" id="search-text" class="textbox">
-			</div>
-			<div id="search-button">
-				<button type="button" onclick="search()" class="btn"><img src="img/magnifying_len_2.png"></button>	
-			</div>
-		<div>
-		<div id="images-container"></div>
-        <div id="modal-windows">
-        </div>
-        <footer>
-			<h5>© Lampros Dragomoiris 2015</h5>
 		</footer>
 	</body>
 </html>
