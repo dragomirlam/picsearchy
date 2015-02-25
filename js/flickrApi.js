@@ -13,19 +13,25 @@ function jsonFlickrApi(res){
 		server_id = photos[i].server;
 		photo_id = photos[i].id;
 		secret = photos[i].secret;
-		s_url = 'https://farm'+farm_id+'.staticflickr.com/'+server_id+'/'+photo_id+'_'+secret+'_s.jpg';
+		s_url = 'https://farm'+farm_id+'.staticflickr.com/'+server_id+'/'+photo_id+'_'+secret+'_q.jpg';
 		b_url = 'https://farm'+farm_id+'.staticflickr.com/'+server_id+'/'+photo_id+'_'+secret+'.jpg';
 		// img = '<a href="'+ b_url +'">'+'<img alt="'+ photos[i].title +'"src="'+ s_url +'"/>'+'</a>';
-		imgSmall = '<img alt="'+ photos[i].title +'"src="'+ s_url +'" class="small-img"/>';
-		href = '<a href="#'+photo_id+'" id="pop">'+imgSmall+'</a>';
+		imgSmall = '<img id="'+photo_id+'" style="border: solid 2px #000000;" onclick="selectImg('+photo_id+')" alt="'+ photos[i].title +'"src="'+ s_url +'" class="small-img"/>';
+		// href = '<a href="#'+photo_id+'" id="pop">'+imgSmall+'</a>';
+		href = imgSmall;
 
 		imgBig = '<img alt="'+ photos[i].title +'"src="'+ b_url +'"/>';
-		modalWindow = '<a href="#x" class="overlay" id="'+photo_id+'"></a>'+
+		modalWindow = '<a href="#" class="overlay" id="'+photo_id+'"></a>'+
 					  '<div class="popup">'+
 					  imgBig+
-					  '<a class="close" href="#close"></a>'+
-					  '</div>'
+					  '<a class="close" href="#"></a>'+
+					  '</div>';
+					  
 		document.getElementById("images-container").innerHTML+= href;
 		document.getElementById("modal-windows").innerHTML+= modalWindow;
+	}
+
+	for(var i=0; i<photosLength; i++){
+		document.getElementById(photo_id).style.visibility = "visible";
 	}
 }
