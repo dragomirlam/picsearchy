@@ -11,23 +11,46 @@
 		<title>Picsearchy</title>
 	</head>
 
-	<body>
+	<body onload="loadData()">
+		<header>
+			<div id="logo-container">
+				<a href="index.html"><img src="img/logo.png" id="logo"></a>
+			</div>
+			<div id="galleries-container">
+				<!-- <button type="button" onclick="" class="btn" id="galleries-menu"><img src="img/menu_2.png"></button> -->
+				<select name="galleries" id="galleries-menu" onchange="loadGalleryImages()">
+						<option value="null">Galleries</option> 
+				</select>
+				<button type="button" onclick="addGallery()" class="btn"><img src="img/add.png"></button>
+				
+			</div>
+			<div id="title-container">
+				<!-- <p id="logo-title">Picsearchy</p> -->
+				<img id="logo-title" src="img/logo-title.png">
+			</div>
+		</header>
 		<div id="main-container">
-			<header>
-				<div id="logo-container">
-					<img src="img/logo.png" id="logo">
-				</div>
-				<div id="title-container">
-					<p id="logo-title">Picsearchy</p>
-				</div>
-			</header>
 			<div id="search-container">
 				<div id="search-box">
-					<input type="text" id="search-text" value="welcome" class="textbox">
+					<input type="text" id="search-text" class="textbox">
+					<button type="button" onclick="search()" class="btn"><img src="img/magnifying_len_2.png"></button>
 				</div>
 				<div id="search-button">
-					<button type="button" onclick="search()" class="btn"><img src="img/magnifying_len_2.png"></button>	
+						
 				</div>
+				<div id="galleries-container">
+					<!--<select name="cars" id="drop-down-menu">
+						<option value="null">galleries</option>
+						 <option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="fiat">Fiat</option>
+						<option value="audi">Audi</option> 
+					</select>-->
+					<!-- <button type="button" onclick="viewGallery()" id="view-gallery">View</button> -->
+				</div>
+				<!-- <div id="galleries-add-button">
+					<button type="button" onclick="addGallery()" class="btn"><img src="img/add.png"></button>	
+				</div> -->
 				<div id="images-container"></div>
 			</div>
 	        <div id="modal-windows"></div>
