@@ -10,66 +10,71 @@ html, body {
     /*padding-bottom: 10em;*/
 }
 
-/*body > #main-container {
-    height: auto;
-    min-height: 100%;
-}*/
-
 header {
     width: 80%;
-    height: 5.4em;
+    height: 7em;
     background-color: white;
     padding: 0;
     margin-right: auto;
     margin-left: auto;
+    text-align: center;
+    /*clear: both;*/
 }
 
 /* ************ */
 /*     LOGO     */
 /* ************ */
 
-#logo-area {
-    /*width: 50%;
-    height: 10em;*/
-    /*padding: 1em;*/
-    /*background-color: red;*/
-    /*margin-right: auto;
-    margin-left: auto;*/
-    /*clear: both;*/
+#logo-container {
+  width:15%;
+  height: 100%;
+  /*background-color: yellow;*/
+  float: left;
+  /*background-color: green;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #logo {
     width: 5em;
     height: 5em;
-    margin: 0.2em;
+    /*margin: 0.2em;*/
     /*margin: 0;*/
 }
 
-#logo-title {
-    font-family: Monofett;
-    font-size: 4.5em;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 500;
-    margin: 0;
-    padding: 0;
-    /*line-height: 50px;*/
-}
-
-#logo-container {
-    width:20%;
-    /*height: 10em;*/
-    /*background-color: yellow;*/
-    float: left;
-}
+/* /////////////////////////// */
 
 #title-container {
-    /*width:80%;
-    height: 10em;*/
-    vertical-align: middle;
     /*background-color: red;*/
-    /*float: right;*/
+    display: inline-block;
+    margin:0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#logo-title {
+    height: 4em;
+    width: 30em;
+}
+
+/* /////////////////////////// */
+
+#galleries-container {
+  width: 25%;
+  height: 100%;
+  /*background-color: orange;*/
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
 
 #search-container {
     min-width: 300px;
@@ -93,6 +98,9 @@ header {
     /*width: 50%;
     background-color: pink;
     margin: 1em;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #search-button {
@@ -178,7 +186,7 @@ header {
     padding-top: 1em;
 }
 
-.small-img {
+.img-space {
     margin: 0.25em;
 }
 
@@ -279,6 +287,60 @@ a#pop:hover {
     margin-bottom: 10px;
 }
 
+/********************/
+/*  DROP-DOWN-MENU  */
+/********************/
+
+#galleries-menu {
+  background: #333333;
+  background-image: -webkit-linear-gradient(top, #333333, #1F1F1F);
+  background-image: -moz-linear-gradient(top, #333333, #1F1F1F);
+  background-image: -ms-linear-gradient(top, #333333, #1F1F1F);
+  background-image: -o-linear-gradient(top, #333333, #1F1F1F);
+  background-image: linear-gradient(to bottom, #333333, #1F1F1F);
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  color: #ffffff;
+  font-size: 2em;
+}
+
+#galleries-menu {
+  background: #333333;
+  background-image: -webkit-linear-gradient(top, #333333, #1F1F1F);
+  background-image: -moz-linear-gradient(top, #333333, #1F1F1F);
+  background-image: -ms-linear-gradient(top, #333333, #1F1F1F);
+  background-image: -o-linear-gradient(top, #333333, #1F1F1F);
+  background-image: linear-gradient(to bottom, #333333, #1F1F1F);
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  outline: none;
+  /*border-radius: 20px;*/
+  /*font-family: Arial;*/
+  color: #ffffff;
+  font-size: 2em;
+  /*padding: 0.5em 0.75em 0.25em 0.75em;*/
+  /*outline: none;*/
+  /*text-decoration: none;*/
+}
+
+#view-gallery {
+  background: #669999;
+  background-image: -webkit-linear-gradient(top, #669999, #476B6B);
+  background-image: -moz-linear-gradient(top, #669999, #476B6B);
+  background-image: -ms-linear-gradient(top, #669999, #476B6B);
+  background-image: -o-linear-gradient(top, #669999, #476B6B);
+  background-image: linear-gradient(to bottom, #669999, #476B6B);
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 2em;
+  padding: 0.5em 0.75em 0.25em 0.75em;
+  outline: none;
+  text-decoration: none;
+}
+
 /*footer {
     clear: both;
     position: relative;
@@ -308,7 +370,7 @@ a#pop:hover {
 
     header {
         width: 100%;
-        height: 5.4em;
+        height: 7em;
         background-color: white;
         padding: 0;
         /*margin-right: auto;
@@ -327,8 +389,4 @@ a#pop:hover {
         /*padding-left: 5em;
         padding-right: 5em;*/
     }
-
-    /*footer {
-        width: 100%;
-    }*/
 }
