@@ -79,6 +79,12 @@ function addGallery(){
 // Triggers the fuction to show the images of the choosen gallery
 function showGallery(){
 	var galleryName = document.getElementById("galleries-menu").value;
-	document.getElementById("images-container").innerHTML = '';
-	view.showGalleryImages(galleryName);
+	if(galleryName === "null"){
+		alert("Please choose one of the galleries!");
+	}
+	else{
+		document.getElementById("images-container").innerHTML = '';
+		view.showGalleryImages(galleryName);	
+	}
+	
 }
