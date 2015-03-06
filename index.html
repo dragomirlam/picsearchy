@@ -10,11 +10,15 @@
 		<script type="text/javascript" src="js/helpers.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
 		
+		<meta name="description" content="An simple page app for searching images">
+		<meta name="keywords" content="images, search, galleries">
+		<meta name="author" content="Lampros Dragomoiris">
 		<meta charset="UTF-8">
 		<title>Picsearchy</title>
 	</head>
 
 	<body onload="loadData()">
+		<!-- Header's container -->
 		<header>
 			<div id="logo-container">
 				<a href="index.html"><img alt="logo" src="img/logo.png" id="logo"></a>
@@ -36,11 +40,10 @@
 					<input type="text" id="search-text" class="textbox">
 					<button type="button" onclick="search()" class="btn"><img alt="magnifying_len" src="img/magnifying_len_2.png"></button>
 				</div>
-				<div id="search-button">
-						
-				</div>
+				<!-- Images are placed here -->
 				<div id="images-container"></div>
 			</div>
+			<!-- Modal-Windows are placed here -->
 	        <div id="modal-windows"></div>
 		</div>
 	</body>
