@@ -20,6 +20,7 @@ View.prototype.loadSearchResults = function(){
 	}
 };
 
+// Loads the galleries from the session storage into the select element
 View.prototype.loadGalleries = function(){
 	var key;
 
@@ -34,24 +35,26 @@ View.prototype.loadGalleries = function(){
 	}
 };
 
+// Creates a new option element based on the key and appends
+// it in the galleries
 View.prototype.appendGallery = function(key){
 	var option = document.createElement("option");
 	option.text = key;
 	option.value = key;
 	var select = document.getElementById("galleries-menu");
 	select.appendChild(option);
-}
+};
 
+// Places all the images of the selected gallery in the DOM
+// and creates the modal windows
 View.prototype.showGalleryImages = function(key){
-	searchResults = sessionStorage.getItem(key);
-	jsonSearchResults = JSON.parse(searchResults);
-	images = jsonSearchResults.images;
-
-	var imageSmall, imageBig;
+	var searchResults = sessionStorage.getItem(key);
+	var jsonSearchResults = JSON.parse(searchResults);
+	var images = jsonSearchResults.images;
 
 	for(var i=0; i<images.length; i++){
-		imageSmallHref = '<a href="#'+images[i].id+'" id="pop"><img class="img-space" alt="'+images[i].id+'" src='+images[i].s_url+'></a>';
-		imageBigModalWindow = '<a href="#" class="overlay" id="'+images[i].id+'"></a>'+
+		var imageSmallHref = '<a href="#'+images[i].id+'" id="pop"><img class="img-space" alt="'+images[i].id+'" src='+images[i].s_url+'></a>';
+		var imageBigModalWindow = '<a href="#" class="overlay" id="'+images[i].id+'"></a>'+
 							  '<div class="popup"><img class="img-space" alt="'+images[i].id+'" src='+
 							  images[i].b_url+
 							  '><a class="close" href="#"></a>'+
@@ -60,4 +63,4 @@ View.prototype.showGalleryImages = function(key){
 		document.getElementById("images-container").innerHTML += imageSmallHref;
 		document.getElementById("modal-windows").innerHTML += imageBigModalWindow;
 	}
-}
+};

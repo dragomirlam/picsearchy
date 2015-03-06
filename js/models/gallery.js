@@ -1,8 +1,10 @@
 var Gallery = function(){
-	this.key;
+	this.key = null;
 	this.images = [];
 };
 
+// Checks the availability of the name that the user gives to the gallery
+// If the name is available it stores the given input
 Gallery.prototype.setKey = function(){
 	var key = prompt("Please enter a name for the gallery!");
 
@@ -25,6 +27,7 @@ Gallery.prototype.setKey = function(){
 	}
 };
 
+// Returns the key/name of the gallery
 Gallery.prototype.getKey = function(){
 	return this.key;
-}
+};

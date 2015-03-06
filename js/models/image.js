@@ -1,15 +1,17 @@
-var Image = function(id, farm, server, secret){
+var Img = function(id, farm, server, secret){
 	this.id = id;
 	this.farm = farm;
 	this.server = server;
 	this.secret = secret;
-	this.s_url;
-	this.q_url;
-	this.b_url;
+	this.s_url = null;
+	this.q_url = null;
+	this.b_url = null;
 };
 
-Image.prototype.createImgUrl = function(type){
-	if(type === "b"){
+// Create a url based on the input type
+Img.prototype.createImgUrl = function(type){
+	var url;
+  if(type === "b"){
 		url = 'https://farm'+this.farm+'.staticflickr.com/'+this.server+'/'+this.id+'_'+this.secret+'.jpg';
 	} else {
 		url = 'https://farm'+this.farm+'.staticflickr.com/'+this.server+'/'+this.id+'_'+this.secret+'_'+type+'.jpg';
@@ -17,7 +19,8 @@ Image.prototype.createImgUrl = function(type){
 	this.setImgUrl(url, type);
 };
 
-Image.prototype.getImgUrl = function(type){
+// Returns a url based on the input type
+Img.prototype.getImgUrl = function(type){
 	if(type === "s"){
 		return this.s_url;
 	}
@@ -27,9 +30,10 @@ Image.prototype.getImgUrl = function(type){
 	if(type === "b"){
 		return this.b_url;
 	}
-}
+};
 
-Image.prototype.setImgUrl = function(url, type){
+// Sets a url based on the input type
+Img.prototype.setImgUrl = function(url, type){
 	if(type === "s"){
 		this.s_url = url;
 	}
@@ -39,4 +43,4 @@ Image.prototype.setImgUrl = function(url, type){
 	if(type === "b"){
 		this.b_url = url;
 	}
-}
+};

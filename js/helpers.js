@@ -1,14 +1,13 @@
-// xmlHttp request
+// xmlHttp GET request
 function xmlHttpGet(theUrl){
     var xmlHttp = new XMLHttpRequest();
-
-    //open(method,url,async)
     xmlHttp.open("GET", theUrl, false);
     xmlHttp.send();
     return xmlHttp.responseText;
 }
 
-// Flickr API
+// Handling the response from Flickr API
+// and storing the data in the session storage
 function jsonFlickrApi(res){
 	var photosLength = res.photos.photo.length;
 	var photos = res.photos.photo;
@@ -23,7 +22,7 @@ function jsonFlickrApi(res){
 	searchResults.images = [];
 
 	for(var i=0; i<photosLength; i++){
-		var img = new Image(photos[i].id, photos[i].farm, photos[i].server, photos[i].secret);
+		var img = new Img(photos[i].id, photos[i].farm, photos[i].server, photos[i].secret);
 		img.createImgUrl("s");
 		img.createImgUrl("q");
 		img.createImgUrl("b");
@@ -41,31 +40,3 @@ function arrayObjectIndexOf(myArray, searchTerm, property) {
     }
     return -1;
 }
-
-function loadGalleryImages(){
-	var galleryName = document.getElementById("galleries-menu").value;
-	document.getElementById("images-container").innerHTML = null;
-	loadGalleryImgs(galleryName);
-}
-
-function loadGalleryImgs(key){
-	searchResults = sessionStorage.getItem(key);
-	jsonSearchResults = JSON.parse(searchResults);
-	images = jsonSearchResults.images;
-
-	var imageSmall, imageBig;
-
-	for(var i=0; i<images.length; i++){
-		console.log(images[i].id);
-		console.log(images[i].s_url);
-		imageSmallHref = '<a href="#'+images[i].id+'" id="pop"><img class="img-space" src='+images[i].s_url+'></a>';
-		imageBigModalWindow = '<a href="#" class="overlay" id="'+images[i].id+'"></a>'+
-							  '<div class="popup"><img class="img-space" src='+
-							  images[i].b_url+
-							  '><a class="close" href="#"></a>'+
-							  '</div>';
-		document.getElementById("images-container").innerHTML += imageSmallHref;
-		document.getElementById("modal-windows").innerHTML += imageBigModalWindow;
-	}
-}
-

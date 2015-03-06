@@ -2,6 +2,8 @@ var view = new View();
 var selectedImages = [];
 var resJSON;
 
+// Trigger the functions to load the images from the last search
+// and the galleries from the session storage
 function loadData(){
 	if(sessionStorage.length === 0){
 	} else {
@@ -45,10 +47,10 @@ function selectImg(imgId){
 	}
 }
 
-
+// Creates a new gallery named by the user and stores all the data in
+// session storage
 function addGallery(){
 	var gallery = new Gallery();
-	var view = new View();
 
 	if(selectedImages.length === 0){
 		alert("No images have been selected!\nSelect some images and click the add button to create a new gallery!");
@@ -74,6 +76,7 @@ function addGallery(){
 	}
 }
 
+// Triggers the fuction to show the images of the choosen gallery
 function showGallery(){
 	var galleryName = document.getElementById("galleries-menu").value;
 	document.getElementById("images-container").innerHTML = '';
